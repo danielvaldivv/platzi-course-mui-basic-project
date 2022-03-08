@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { TextField , IconButton, Stack } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import { getGitHubUsers } from'../services/getUsers'
 
-const Searcher = () => {
+const Searcher = (props) => {
+  const { inputUser, setInputUser, notFound } = props
+
   const [userState, setUserState] = useState('')
 
   const onSearchValueChange = (event) => {
@@ -11,9 +12,8 @@ const Searcher = () => {
     setUserState(inputValue);
   }
 
-  const handleSubmit = async () => {
-    const userResponse = await getGitHubUsers(userState)
-    console.log(userResponse);
+  const handleSubmit = () => {
+    setInputUser(userState);
   }
 
   return(
