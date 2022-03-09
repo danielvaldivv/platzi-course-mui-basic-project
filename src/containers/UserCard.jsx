@@ -1,8 +1,9 @@
-import { CardMedia, Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
+import { CardMedia, Grid, Stack, Typography } from '@mui/material';
+import Description from './Description';
 
 const UserCard = (props) => {
-  const { userState} = props;
+  const { userState } = props;
   const {
     avatar_url,
     name,
@@ -42,6 +43,7 @@ const UserCard = (props) => {
               </Typography>
             </Stack>
             <Typography>{`@${login}`}</Typography>
+            <Description userState={userState} />
           </Stack>
       </Grid>
     </Grid>
