@@ -31,18 +31,18 @@ const UserCard = (props) => {
       <Grid item xs={9}>
           <Stack
             direction="column"
-            spacing={3}
+            spacing={1}
             sx={{margin: '30px'}}
           >
             <Stack direction="row" sx={{ justifyContent: 'space-between' }} >
-              <Typography>
+              <Typography variant="h4">
                 {name}
               </Typography>
-              <Typography>
+              <Typography variant="subtitle2">
                 {created_at}
               </Typography>
             </Stack>
-            <Typography>{`@${login}`}</Typography>
+            <Typography variant="caption">{`@${login}`}</Typography>
             <Description userState={userState} />
           </Stack>
       </Grid>
