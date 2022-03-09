@@ -1,14 +1,12 @@
 import React from 'react';
 import { CardMedia, Grid, Stack, Typography } from '@mui/material';
 import Description from './Description';
+import PrincipalInformation from '../components/PrincipalInformation';
 
 const UserCard = (props) => {
   const { userState } = props;
   const {
     avatar_url,
-    name,
-    login,
-    created_at,
   } = userState;
 
   return(
@@ -34,15 +32,7 @@ const UserCard = (props) => {
             spacing={1}
             sx={{margin: '30px'}}
           >
-            <Stack direction="row" sx={{ justifyContent: 'space-between' }} >
-              <Typography variant="h4">
-                {name}
-              </Typography>
-              <Typography variant="subtitle2">
-                {created_at}
-              </Typography>
-            </Stack>
-            <Typography variant="caption">{`@${login}`}</Typography>
+            <PrincipalInformation userState={userState} />
             <Description userState={userState} />
           </Stack>
       </Grid>
