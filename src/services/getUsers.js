@@ -1,4 +1,4 @@
-import { urlFetch } from './global'
+import { urlFetch } from '../constants'
 
 export const getGitHubUsers = async (user) => {
   const response = await fetch(`${urlFetch}${user}`, {
